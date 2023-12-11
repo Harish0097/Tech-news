@@ -7,8 +7,8 @@ const Page = () => {
     <>
     <h1> Welcome to Harish Tech News</h1>
     <Search  />
-    <Stories  />
     <Pagination  />
+    <Stories  />
     </>
   )
 }

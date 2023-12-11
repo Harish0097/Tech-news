@@ -1,11 +1,16 @@
-import React from 'react'
+import Search from './Search'
+import Stories from './Stories' 
+import Pagination from './Pagination'
 
-const page = () => {
+const Page = () => {
   return (
     <>
-    
+    <h1> Welcome to Harish Tech News</h1>
+    <Search  />
+    <Stories  />
+    <Pagination  />
     </>
   )
 }
 
-export default page
+export default Page

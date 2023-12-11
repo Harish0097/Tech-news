@@ -1,9 +1,14 @@
 import React from 'react'
+import { useContext } from 'react'
+import AppContext from './Context API/AppContext'
+
 
 const search = () => {
+  const data = useContext(AppContext)
+ 
   return (
     <>
-    <div>search</div>
+    <div>search{data}</div>
     </>
   )
 }

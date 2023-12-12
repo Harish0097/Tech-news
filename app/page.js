@@ -10,7 +10,7 @@ const Page = () => {
   return (
     <AppProvider>
       <>
-        <h1> Welcome to Harish Tech News</h1>
+        <h1 className='flex justify-center text-3xl'> Welcome to Harish Tech News</h1>
         <Search />
         <Pagination />
         <Stories />

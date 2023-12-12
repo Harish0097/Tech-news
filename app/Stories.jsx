@@ -1,40 +1,26 @@
-
-"use client"
 import React from 'react'
-import { useEffect } from 'react'
+import { useContext } from 'react'
+import AppContext from './Context API/AppContext'
 
 const stories = () => {
-    let API = "https://hn.algolia.com/api/v1/search?query=html"
-    let isLoading = true
-    
-    const fetchApi = async (url) => {
-        try {
-            const res = await fetch(url)
-            const data = await res.json()
-            console.log(data)    
-        } catch (error) {
-            console.log("error")
-        }
-    }
+    const { hits, nbPages } = useContext(AppContext)
 
+    // if (isLoading) {
+    //     return (
+    //         <>
+    //         <h1>Loading...</h1>
+    //         </>
+    //     )
+    // }
 
-    useEffect(() => {
-        fetchApi(API)
-    }, [])
-
-    if (isLoading) {
-        return (
-            <>
-            <h1>Loading...</h1>
-            </>
-        )
-    }
-
-  return (
-    <>
-    <h2>My Tech news post</h2>
-    </>
-  )
+    return (
+        <>
+            <h2>My Tech news post</h2>
+            {hits.map((currPost) => {
+                return <h2>{currPost.title}</h2>
+            })}
+        </>
+    )
 }
 
 export default stories
